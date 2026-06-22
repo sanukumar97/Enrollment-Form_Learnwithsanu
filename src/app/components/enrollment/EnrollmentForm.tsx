@@ -342,7 +342,7 @@ function StepPlan({ form, errors, update, plans }: SP & { plans: Plan[] }) {
                     {plan.duration_weeks && (
                       <span className="text-xs px-2.5 py-1 rounded-full font-medium"
                         style={{ background: "#E8FFF6", color: "#008963" }}>
-                        Duration : {plan.duration_weeks}
+                        Duration : {plan.duration_weeks} weeks
                       </span>
                     )}
                     {plan.session_limit && (
@@ -764,9 +764,9 @@ function ThankYou({ name, planId, plans, payment }: {
           </a>
 
           <p className="text-xs text-center" style={{ color: "var(--muted-foreground)" }}>
-            Support:{" "}
-            <a href={`https://wa.me/91${supportNo}`} className="underline" style={{ color: PRIMARY }}>
-              {supportDisplay}
+            Join Telegram Group:{" "}
+            <a href="https://t.me/LearnWithSanu" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: PRIMARY }}>
+              @LearnWithSanu
             </a>
           </p>
         </div>
