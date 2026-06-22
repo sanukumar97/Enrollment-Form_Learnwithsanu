@@ -7,6 +7,7 @@ export async function fetchActivePlans(): Promise<Plan[]> {
     .from("plans")
     .select("slug, name, price_paise, tag, display_order, duration_weeks, session_limit")
     .eq("is_active", true)
+    .eq("form_type", "paid")
     .order("display_order", { ascending: true });
 
   if (error || !data?.length) {
