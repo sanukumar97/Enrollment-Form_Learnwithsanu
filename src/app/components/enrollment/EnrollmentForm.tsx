@@ -142,19 +142,10 @@ export function EnrollmentForm() {
 
           {/* Brand row */}
           <div className="flex items-center gap-3 py-3">
-            <div className="w-8 h-8 rounded-xl flex items-center justify-center shrink-0"
-              style={{ background: PRIMARY }}>
-              {/* Minimal book icon drawn inline */}
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" /><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
-              </svg>
-            </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-bold leading-none" style={{ color: "var(--foreground)" }}>LearnWithSanu</p>
-              <p className="text-xs mt-0.5" style={{ color: "var(--muted-foreground)" }}>IIT Preparation Enrollment</p>
-            </div>
+            <img src="/logo_for_form .png" alt="LearnWithSanu"
+              style={{ height: 36, width: "auto", objectFit: "contain" }} />
             {/* Step counter pill */}
-            <div className="shrink-0 text-xs font-bold px-3 py-1.5 rounded-full"
+            <div className="ml-auto shrink-0 text-xs font-bold px-3 py-1.5 rounded-full"
               style={{ background: PRIMARY, color: "white" }}>
               {step + 1}/{STEPS.length}
             </div>
@@ -346,6 +337,22 @@ function StepPlan({ form, errors, update, plans }: SP & { plans: Plan[] }) {
                     </span>
                   )}
                 </div>
+                {(plan.duration_weeks || plan.session_limit) && (
+                  <div className="flex items-center gap-2 flex-wrap mt-1.5">
+                    {plan.duration_weeks && (
+                      <span className="text-xs px-2.5 py-1 rounded-full font-medium"
+                        style={{ background: "#E8FFF6", color: "#008963" }}>
+                        Duration : {plan.duration_weeks}
+                      </span>
+                    )}
+                    {plan.session_limit && (
+                      <span className="text-xs px-2.5 py-1 rounded-full font-medium"
+                        style={{ background: "#FFF6EB", color: "#FF9900" }}>
+                        No. of Session : {plan.session_limit}
+                      </span>
+                    )}
+                  </div>
+                )}
               </div>
 
               <span className="shrink-0 text-sm font-bold" style={{ color: sel ? PRIMARY : "var(--foreground)" }}>

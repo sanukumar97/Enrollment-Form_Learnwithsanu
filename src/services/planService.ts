@@ -5,7 +5,7 @@ import { PLANS as FALLBACK_PLANS } from "../app/components/enrollment/types";
 export async function fetchActivePlans(): Promise<Plan[]> {
   const { data, error } = await supabase
     .from("plans")
-    .select("slug, name, price_paise, tag, display_order")
+    .select("slug, name, price_paise, tag, display_order, duration_weeks, session_limit")
     .eq("is_active", true)
     .order("display_order", { ascending: true });
 
@@ -19,5 +19,7 @@ export async function fetchActivePlans(): Promise<Plan[]> {
     name: row.name,
     price: row.price_paise / 100,
     tag: row.tag ?? undefined,
+    duration_weeks: (row as Record<string, unknown>).duration_weeks as string | undefined ?? undefined,
+    session_limit: (row as Record<string, unknown>).session_limit as string | undefined ?? undefined,
   }));
 }

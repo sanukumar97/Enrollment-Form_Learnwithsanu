@@ -15,6 +15,8 @@ export interface Plan {
   name: string;
   price: number;
   tag?: string;
+  duration_weeks?: string;
+  session_limit?: string;
 }
 
 export const PLANS: Plan[] = [
