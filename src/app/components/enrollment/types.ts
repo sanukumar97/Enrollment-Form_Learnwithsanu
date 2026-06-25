@@ -30,12 +30,12 @@ export const PLANS: Plan[] = [
 ];
 
 export const IIT_OPTIONS = [
-  { id: "iit-bombay", label: "IIT Bombay" },
-  { id: "iit-delhi", label: "IIT Delhi" },
-  { id: "iit-hyderabad", label: "IIT Hyderabad" },
-  { id: "iit-jodhpur", label: "IIT Jodhpur" },
-  { id: "iit-roorkee", label: "IIT Roorkee" },
-  { id: "iit-gandhinagar", label: "IIT Gandhinagar" },
+  { id: "IIT-Bombay", label: "IIT Bombay" },
+  { id: "IIT-Delhi", label: "IIT Delhi" },
+  { id: "IIT-Hyderabad", label: "IIT Hyderabad" },
+  { id: "IIT-Jodhpur", label: "IIT Jodhpur" },
+  { id: "IIT-Roorkee", label: "IIT Roorkee" },
+  { id: "IIT-Gandhinagar", label: "IIT Gandhinagar" },
 ];
 
 export const REFERRAL_OPTIONS = [
